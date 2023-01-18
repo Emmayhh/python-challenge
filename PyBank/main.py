@@ -4,9 +4,7 @@ import csv
 TotalMonths = 0
 InitialProfit = 0
 TotalProfit = 0
-numMonths =[]
 
-#ProfitChange_List = []
 MonthlyChange = []
 AverageChange = []
 MaxIncreases = ["", 0]
