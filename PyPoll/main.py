@@ -4,11 +4,8 @@ import csv
 TotalVotesCast = 0
 candidates_list = []
 candidates_dic = {}
-PercentageVotes = []
-candidatesW = []
-
 winners = ""
-winnerNum = 0
+
 
 
 #Create path to csv file
@@ -28,45 +25,42 @@ with open(election_csv, 'r') as csvfile:
 
         candidates = (row[2])
 
-    # if not in in the current candidates
-    #A complete list of candidates who received votes
+        # if not in the current candidates, add
         if candidates not in candidates_list:
-            #add it to list
+            #add name of candidates
             candidates_list.append(candidates)
             #start to count
             candidates_dic[candidates] = 0
-        
+
         candidates_dic[candidates] += 1
-
+        
+    #A complete list of candidates who received votes
     
-
 print("------------------------------------------------")
 print("Financial Analysis")
 print("------------------------------------------------")
 print(f"Total votes: {TotalVotesCast}")
 
-for candidatesW in candidates_dic:
 
-    VotesCast = candidates_dic.get(candidatesW)
+for candidates in candidates_dic:
+    #extract each candidates votestotal
+    VotesCast = candidates_dic.get(candidates)
 
-        #The total number of votes each candidate won
+    #percentage of each candidate
     PercentageVotes = VotesCast / TotalVotesCast * 100
     
-    #The winner of the election based on popular vote
-    
-    if (winnerNum < VotesCast):
-        winnersName = candidatesW
-    
+    #splite name and votestotal from dic
+    for keys, values in candidates_dic.items():
+        print(f"{keys}: {PercentageVotes:3f}% ({values})")
 
-for item in candidates_dic:
-    print(f"{item}: {PercentageVotes:.3f}% ({candidates_dic[item]})")
+    # find who won the election
+    winners = max(candidates_dic)
 
-print("------------------------------------------------")
-print(f"Winner:{winnersName}")
-print("------------------------------------------------")   
+    print("------------------------------------------------")
+    print(f"Winner:{winners}")
+    print("------------------------------------------------")   
 
-# calculate the percentage of votes per candicate (3 decimal points)
-text_file = ("analysis/PyPoll_text_file.txt")
+text_file = ("/Users/hany/Desktop/Bootcamp/03-Python/Ass3/python-challenge/PyPoll/analysis/PyPoll_text_file.txt")
 
 with open(text_file, "w") as textfile:
     textfile.write("------------------------------------------------\n")
@@ -74,9 +68,11 @@ with open(text_file, "w") as textfile:
     textfile.write("------------------------------------------------\n")  
     textfile.write(f"Total votes: {TotalVotesCast}\n")
 
-    for item in candidates_dic:
-        textfile.write(f"{item}: {PercentageVotes:.3f}% ({candidates_dic[item]})\n")
+
+    for keys, values in candidates_dic.items():
+        textfile.write(f"{keys}: {PercentageVotes:3f}% ({values})\n")
+
 
     textfile.write("------------------------------------------------\n")
-    textfile.write(f"Winner:{winnersName}\n")
+    textfile.write(f"Winner:{winners}\n")
     textfile.write("------------------------------------------------\n")  
