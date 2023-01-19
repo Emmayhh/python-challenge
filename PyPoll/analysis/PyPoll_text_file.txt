@@ -2,9 +2,21 @@
 Financial Analysis
 ------------------------------------------------
 Total votes: 369711
-Charles Casper Stockham: 3.139% (85213)
-Diana DeGette: 3.139% (272892)
-Raymon Anthony Doane: 3.139% (11606)
+Charles Casper Stockham: 23.048543% (85213)
+Diana DeGette: 23.048543% (272892)
+Raymon Anthony Doane: 23.048543% (11606)
+------------------------------------------------
+Winner:Raymon Anthony Doane
+------------------------------------------------
+Charles Casper Stockham: 73.812248% (85213)
+Diana DeGette: 73.812248% (272892)
+Raymon Anthony Doane: 73.812248% (11606)
+------------------------------------------------
+Winner:Raymon Anthony Doane
+------------------------------------------------
+Charles Casper Stockham: 3.139209% (85213)
+Diana DeGette: 3.139209% (272892)
+Raymon Anthony Doane: 3.139209% (11606)
 ------------------------------------------------
 Winner:Raymon Anthony Doane
 ------------------------------------------------
